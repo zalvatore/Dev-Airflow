@@ -5,6 +5,11 @@
 # SOURCE: https://github.com/puckel/docker-airflow
 
 FROM python:3.7-slim-buster
+
+COPY requirements.txt .
+RUN pip install --upgrade pip --user
+RUN pip install --no-cache-dir -r requirements.txt
+
 LABEL maintainer="Puckel_"
 
 # Never prompt the user for choices on installation/configuration of packages
